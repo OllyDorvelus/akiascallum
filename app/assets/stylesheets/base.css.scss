@@ -1,0 +1,11 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+$top-border-cl: #eaeaea;
+$primary-bg: #000;
+$secondary-cl: #fff;
+$primary-cl: #d6d60c;
+
+h1 {
+  color: $primary-cl;
+  background-color: $primary-bg;
+}
