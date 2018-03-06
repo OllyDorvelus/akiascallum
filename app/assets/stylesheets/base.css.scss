@@ -4,8 +4,68 @@ $top-border-cl: #eaeaea;
 $primary-bg: #000;
 $secondary-cl: #fff;
 $primary-cl: #d6d60c;
+$opac: 0.75;
 
-h1 {
+body {
+  background: $primary-bg;
   color: $primary-cl;
-  background-color: $primary-bg;
 }
+
+.opac {
+  opacity: $opac;
+}
+.navigation {
+ // position:fixed;
+  width:100%;
+  background-color: $primary-bg;
+  opacity: $opac;
+  color: $primary-cl;
+  border: 10px;
+  height: 2.5em;
+  
+    a {
+      color: $primary-cl;
+      text-decoration: none;
+    }
+
+  .navli {
+    display:inline;
+    padding-right: 10px;
+    padding-left: 10px;
+    vertical-align:middle;
+    list-style:none;
+    font-size:14px;
+    border-bottom: 0px solid $primary-cl;
+    line-height:2.2em;
+  }
+
+  .dropdown-menu {
+      background-color:$primary-bg;
+
+      a {
+        color: $primary-cl;
+        }
+
+      a:hover {
+        background-color:$primary-bg;
+        color: $primary-cl;
+        opacity: 0.8;
+        }
+    }
+
+  li:hover {
+      cursor: pointer;
+    }
+  
+}
+
+.frontimg {
+  height:180px;
+  width:225px;
+}
+
+.welcomeabout {
+  letter-spacing:-0.4px;
+}
+
+

@@ -1,4 +1,7 @@
-class BlogController < ApplicationController
+class BlogsController < ApplicationController
+  def index
+    
+  end
   
   def show
     

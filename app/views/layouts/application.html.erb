@@ -4,13 +4,17 @@
   <title>Akiascallum</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="//cdn.jsdelivr.net/jquery.color-animation/1/mainfile"></script>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<h1>
   
-  </h1>
+<body>
+<%= render 'layouts/nav' %>
+  <div class="container-fluid">
 <%= yield %>
+</div>
+ 
+
 
 </body>
 </html>
