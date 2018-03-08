@@ -1,5 +1,6 @@
 <ul class="navigation" align="center">
-  <li class="navli">View Blogs</li>
+  <%= link_to "Home", root_path, class: "navli" %>
+  <%= link_to "Blogs", blogs_path, class:"navli" %>
   <li class="navli">Gallery</li>
   <li class="dropdown navli">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Topics <span class="caret"></span></a>
@@ -12,5 +13,14 @@
     </ul>
   </li>
   <li class="navli">About</li>
+  <% if logged_in? && current_user.admin? %> 
+    <%= link_to "Logout", logout_path, method: :delete, class: "navli" %>
+  <% end if %>
+  <% if logged_in? && current_user.admin? %> 
+    <%= link_to "New Blog Post", blogs_new_path, class: "navli" %>
+  <% end if %>
+  <% if logged_in? && current_user.admin? %> <li style="list-style:none;display:none"></li>
+  <% end if %>
+
 </ul>
 

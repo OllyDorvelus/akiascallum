@@ -68,4 +68,20 @@ body {
   letter-spacing:-0.4px;
 }
 
+.btn-primary, .btn-primary:active, .btn-primary:visited {
+    background-color: $primary-cl !important;
+    /*background: rgba(0, 0, 0, 0.5) !important;*/
+    border-radius:10px;
+    color:black !important;
+}
+
+.btn-primary:hover {
+  color:$primary-cl !important;
+  background-color:$primary-bg !important;
+}
+
+.login-field {
+  width: 20%;
+}
+
 

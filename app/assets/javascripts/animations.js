@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
   $('.navli').mouseenter(function(){
     //$(this).animate({backgroundColor: 'yellow'},500)
     $(this).animate({borderWidth: '2px'},200)
@@ -11,4 +11,7 @@ $(document).ready(function() {
   }).mouseleave(function(){
     $(this).animate({height: 180, width: 225}, 200)
   })
-})
+
+});
+
+
