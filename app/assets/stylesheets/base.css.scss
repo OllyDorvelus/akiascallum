@@ -84,4 +84,47 @@ body {
   width: 20%;
 }
 
+.article-detail {
+  color: $primary-bg; 
+  background-color: $primary-cl;
+  
+  h1 {
+    font-weight: 900;
+  }
+  
+  h4 {
+    font-weight: 900;
+  }
+  
+//   .jumbotron {
+//  //   background-image: asset-url('kiadesk.jpg');
+//     height: 50em;
+//   //  background-size: 100% 100%;
+//   }
+  .blog-body {
+    background-color: $primary-cl
+  }
+  
+  p {
+    background-color: $primary-cl;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+  }
+}
+
+
+
+.content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+
+
 

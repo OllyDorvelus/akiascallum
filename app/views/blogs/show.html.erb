@@ -1,3 +1,53 @@
-<h1>
-  <%= @blog.title %>
-</h1>
+<div class="opac article-detail">
+  <div class="contain">
+    <div class="background-image" id="bgslide" style="width:100%"></div>
+    <h1 align="center">
+      <%= @blog.title %>
+    </h1>
+    <h4 align="center">
+      Akia Callum
+    </h4>
+  </div>
+  <div class="blog-body col-md-8 col-md-offset-2">
+    <div style="display:block">
+    <p>
+      <%= simple_format @blog.description %>
+    </p>
+      <small>Last updated <%= time_ago_in_words(@blog.updated_at)  %> ago </small></br>
+      <small>Posted <%= time_ago_in_words(@blog.created_at)  %> ago </small>
+
+      </div>
+    </div>
+</div>
+
+<style>
+.background-image {
+  left: 0;
+  right: 0;
+  //z-index: 1;
+
+  display: block;
+  background-image: url('<%= image_path @photos.sample %>');
+  width: 100%;
+  height: 35em;
+  opacity: 0.8;
+  background-size: cover;
+  -webkit-filter: blur(0.5px);
+  -moz-filter: blur(0.5px);
+  -o-filter: blur(0.5px);
+  -ms-filter: blur(0.5px);
+  filter: blur(0.5px);
+  border-radius: 100px;
+}
+</style>
+
+<script>
+
+function changeImage() {
+    $('.background-image').css("background-image", "url('<%= image_path @photos.sample %>' )" )
+ }
+  
+//     setInterval(function() {
+//       changeImage()
+//     }, 10000)   
+</script>

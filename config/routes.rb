@@ -7,8 +7,9 @@ Rails.application.routes.draw do
     root 'welcome#index'
     get 'blogs' => 'blogs#index'
     get  'blogs/new' => 'blogs#new'
-    post 'blogs/new' => 'blogs#create'
-    get 'blogs/:id' => 'blogs#show'
+    #post 'blogs/new' => 'blogs#create'
+    
+    resources :blogs, only: [:create, :show]
     
     get 'login', to: 'sessions#new'
     post 'login', to: 'sessions#create'

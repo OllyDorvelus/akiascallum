@@ -12,6 +12,25 @@ $(document).on('turbolinks:load', function() {
     $(this).animate({height: 180, width: 225}, 200)
   })
 
+  
+ // $('.background-image').css("background-image", "url(<%= image_path 'kiadesk.jpg' %>)" )
+  
+  var photoArrays = ['kiadesk.jpg', 'kiacongress.jpg', "kigbag.jpg", "kiarunback.jpg"]
+  
+//   function changeImage() {
+//     setInterval(function() {
+      
+    
+//    // $('.background-image').fadeOut(1000)
+//     $('.background-image').css("background-image", "url()" )
+//   //  $('.background-image').fadeIn(1000)
+//       }, 2000)
+//   }
+  
+//   changeImage()
+  
 });
+
+
 
 
