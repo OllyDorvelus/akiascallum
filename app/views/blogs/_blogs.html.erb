@@ -1,0 +1,27 @@
+<% obj.each do |blog| %>
+<div class="row blog-list">
+  <div class="col-md-3 col-md-offset-1 blog-list-title">
+    <h3><%= link_to blog.title, blog_path(blog) %></h3>
+    <h4>Akia Callum</h4>
+  </div>
+  <div class="col-md-4 blog-body-list">
+    <p>
+      <%= simple_format truncate(blog.description, length: 600), class:".blog-body-list" %>
+    </p>
+    <div style="float:left">
+      <small>Last updated <%= time_ago_in_words(blog.updated_at)  %> ago </small></br>
+      <small>Posted <%= time_ago_in_words(blog.created_at)  %> ago </small>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <%= image_tag "kiastance.jpg" %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+  <hr> 
+  </div> 
+</div>
+
+
+<% end %>

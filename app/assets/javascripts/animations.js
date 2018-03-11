@@ -11,11 +11,28 @@ $(document).on('turbolinks:load', function() {
   }).mouseleave(function(){
     $(this).animate({height: 180, width: 225}, 200)
   })
+  
+  $('.gallery-img-container').mouseenter(function(){
+   // $(".caption").removeClass("hidden")
+    var caption = $(this).find(".caption")
+    var img = $(this).find(".gallery-list-img")
+        img.animate({
+        opacity: "0.3"
+    }, 200)
+     caption.removeClass("hidden")
+  }).mouseleave(function(){
+    var caption = $(this).find(".caption")
+    var img = $(this).find(".gallery-list-img")
+    img.animate({
+        opacity: "1"
+    }, 200)
+    caption.addClass("hidden")
+  })
 
   
  // $('.background-image').css("background-image", "url(<%= image_path 'kiadesk.jpg' %>)" )
   
-  var photoArrays = ['kiadesk.jpg', 'kiacongress.jpg', "kigbag.jpg", "kiarunback.jpg"]
+ // var photoArrays = ['kiadesk.jpg', 'kiacongress.jpg', "kigbag.jpg", "kiarunback.jpg"]
   
 //   function changeImage() {
 //     setInterval(function() {

@@ -1,0 +1,19 @@
+
+<% @photos.each do |photo| %>
+     
+
+  <div class="col-md-3 gallery-img-container">
+    <%= image_tag photo.picture.url, class: "gallery-list-img img-responsive" %>
+    <div class="caption hidden">
+     <%= photo.caption %>
+    </div>
+   </div> 
+
+
+
+
+<% end %>
+<div class="row">
+  <%= link_to 'New Photo', new_photo_path %>
+</div>
+

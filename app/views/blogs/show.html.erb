@@ -46,8 +46,7 @@
 function changeImage() {
     $('.background-image').css("background-image", "url('<%= image_path @photos.sample %>' )" )
  }
-  
-//     setInterval(function() {
-//       changeImage()
-//     }, 10000)   
+   <% if @blog.description.length < 100 %>
+      $('.blog-body').addClass("text-center")                 
+   <% end %>
 </script>
