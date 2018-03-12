@@ -5,11 +5,11 @@ class BlogsController < ApplicationController
   
   def index
     @blogs = Blog.paginate(page: params[:page], per_page: 10)
+    @photos = ['kiadesk.jpg', 'kiacongress.jpg', "kiabag.jpg", "kiarunback.jpg"]
   end
   
   def show
     @photos = ['kiadesk.jpg', 'kiacongress.jpg', "kiabag.jpg", "kiarunback.jpg"]
-    @counter = 0
   end
   
   def new
@@ -32,17 +32,22 @@ class BlogsController < ApplicationController
   end
   
   def update
-    
+    if @blog.update(blog_params)
+      redirect_to blog_path(@blog)
+    else
+      render 'edit'
+    end
   end
   
-  def destory 
-    
+  def destroy
+    @blog.destroy
+    redirect_to blogs_path
   end
   
   private
   
   def blog_params 
-    params.require(:blog).permit(:title, :description)
+    params.require(:blog).permit(:title, :description, :picture)
   end
   
   def set_blog

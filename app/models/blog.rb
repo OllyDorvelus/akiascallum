@@ -3,4 +3,5 @@ class Blog < ActiveRecord::Base
   validates :title, presence: true, length: { minimum: 5, maximum: 30 }, uniqueness: { case_sensitive: false }
   validates :description, presence: true, length: { minimum: 10, maximum: 5000}
   validates :user_id, presence: true
+  mount_uploader :picture, PictureUploader
 end

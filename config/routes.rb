@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     get  'blogs/new' => 'blogs#new'
     #post 'blogs/new' => 'blogs#create'
     
-    resources :blogs, only: [:create, :show]
+    resources :blogs, only: [:create, :show, :edit, :update, :destroy]
     
     get 'login', to: 'sessions#new'
     post 'login', to: 'sessions#create'

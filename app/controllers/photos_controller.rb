@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
-
+  before_action :is_admin, only: [:edit, :new, :update, :destroy]
   # GET /photos
   # GET /photos.json
   def index
@@ -72,4 +72,14 @@ class PhotosController < ApplicationController
     def photo_params
       params.require(:photo).permit(:caption, :picture, :user_id)
     end
+  # Admin for certain permissions
+  def is_admin
+    if logged_in?
+       if !current_user.admin?
+         redirect_to root_path
+       end
+    else 
+      redirect_to root_path
+    end
+  end
 end
