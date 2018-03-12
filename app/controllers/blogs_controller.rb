@@ -47,7 +47,7 @@ class BlogsController < ApplicationController
   private
   
   def blog_params 
-    params.require(:blog).permit(:title, :description, :picture)
+    params.require(:blog).permit(:title, :description, :picture, category_ids: [])
   end
   
   def set_blog

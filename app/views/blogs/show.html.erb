@@ -35,7 +35,7 @@
 
   display: block;
   background-image: url('<% if @blog.picture? %> 
-                        <%=image_path @blog.picture.url %>
+                        <%= image_path @blog.picture.url %>
                         <% else %>
                         <%=image_path @photos.sample %>'
                         <% end %>);

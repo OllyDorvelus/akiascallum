@@ -177,6 +177,18 @@ hr {
   border-radius:5px;
 }
 
+.badge {
+  background-color: $primary-cl;
+
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.badge a {
+    color: $primary-bg;
+}
+
 
 
 
