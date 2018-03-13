@@ -13,15 +13,19 @@
     <p>
       <%= simple_format @blog.description %>
     </p>
+    <div align="center">
       <small>Last updated <%= time_ago_in_words(@blog.updated_at)  %> ago </small></br>
-    <small>Posted <%= time_ago_in_words(@blog.created_at)  %> ago </small></br>
+      <small>Posted <%= time_ago_in_words(@blog.created_at)  %> ago </small></br>
+    </div>
+      <div align="center">
       <small>
-      <% if logged_in? && current_user.admin? %>
-           <%= link_to "Edit article", edit_blog_path(@blog), class: "btn btn-xs btn-primary" %></br>
-           <%= link_to "Delete article", blog_path(@blog), method: :delete,
-               data: { confirm: 'Are you sure you want to delete this article'},
-               class: "btn btn-xs btn-danger"%>
-      <% end %>
+        <% if logged_in? && current_user.admin? %>
+             <%= link_to "Edit article", edit_blog_path(@blog), class: "btn btn-xs btn-primary" %></br>
+             <%= link_to "Delete article", blog_path(@blog), method: :delete,
+                 data: { confirm: 'Are you sure you want to delete this article'},
+                 class: "btn btn-xs btn-danger"%>
+        <% end %>
+      </div>
     </small>
       </div>
     </div>
@@ -34,10 +38,10 @@
   //z-index: 1;
 
   display: block;
-  background-image: url('<% if @blog.picture? %> 
+  background-image: url(<% if @blog.picture? %> 
                         <%= image_path @blog.picture.url %>
                         <% else %>
-                        <%=image_path @photos.sample %>'
+                        <%=image_path @photos.sample %>
                         <% end %>);
   width: 100%;
   height: 700px;
@@ -54,9 +58,11 @@
 
 <script>
 
-function changeImage() {
-    $('.background-image').css("background-image", "url('<%= image_path @photos.sample %>' )" )
- }
+// function changeImage() {
+//     $('.background-image').css("background-image", "url('<%= image_path @photos.sample %>' )" )
+//  }
+ // $('.background-image').css("background-image", "url('<% @blog.picture.url if @blog.picture? %>')")
+  console.log("<%= @blog.picture.url %>")
    <% if @blog.description.length < 100 %>
       $('.blog-body').addClass("text-center")                 
    <% end %>

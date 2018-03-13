@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:edit, :update, :show, :destroy]
+  before_action :set_category, only: [:show, :destroy]
   before_action :is_admin, only: [:new, :edit, :destroy, :update]
   def new
     @category = Category.new
@@ -20,15 +20,21 @@ class CategoriesController < ApplicationController
     @photos = ['kiadesk.jpg', 'kiacongress.jpg', "kiabag.jpg", "kiarunback.jpg"]
   end
   
+  def index
+    @categories = Category.paginate(page: params[:page], per_page: 5)
+  end
+  
   def edit
-   
+    @category = Category.find(params[:id])
   end
   
   def update
+    @category = Category.find(params[:id])
       if @category.update(category_params)
         flash[:success] = "Category name was succesfully updated"
+        redirect_to category_path(@category.name)
       else
-        render 'edit'
+        redirect_to root_path
       end
   end
   

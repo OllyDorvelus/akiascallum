@@ -1,0 +1,20 @@
+<h1 align="center">
+  Listing All Categories
+</h1>
+
+<div align="center">
+  <%= will_paginate %>
+  <% @categories.each do |category| %>
+    <ul class="listing">
+      <div class="row">
+        <div class="well col-md-4 col-md-offset-4" style="background-color:black">
+          <li class="blog-title">
+            <%= link_to category.name, category_path(category.name) %>
+          </li>
+          <li><small><%= pluralize(category.blogs.count, "blog") %></small></li>
+        </div>
+      </div>
+  </ul>
+  <%  end %>
+  <%= will_paginate %>
+  </div>

@@ -3,7 +3,7 @@
 $top-border-cl: #eaeaea;
 $primary-bg: #000;
 $secondary-cl: #fff;
-$primary-cl: #d6d60c;
+$primary-cl: #D4AF37;
 $opac: 0.75;
 
 body {
@@ -190,5 +190,19 @@ hr {
 }
 
 
+.view-blog a {
+  color: $primary-cl;
+}
 
+.bg-primary-cl {
+  background-color: $primary-cl !important;
+}
+
+.listing {
+  list-style:none;
+}
+
+.listing a {
+  color: $primary-cl;
+}
 

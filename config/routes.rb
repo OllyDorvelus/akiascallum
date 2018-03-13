@@ -12,11 +12,13 @@ Rails.application.routes.draw do
     #post 'blogs/new' => 'blogs#create'
     
     resources :blogs, only: [:create, :show, :edit, :update, :destroy]
-    resources :categories, param: :name#except: [:update]
-  
+    resources :categories, param: :name, except: [:update, :edit]
+    resources :categories, only: [:update, :edit]
 #     get 'categories/:name' => 'categories#show'
 #     get 'categories/:name/edit' => 'categories#edit'
-#    post 'categories/:name/edit' => 'categories#update'
+
+#     put 'categories/:name' => 'categories#update'
+#     patch 'categories/:name' => 'categories#update'
   
     get 'login', to: 'sessions#new'
     post 'login', to: 'sessions#create'
