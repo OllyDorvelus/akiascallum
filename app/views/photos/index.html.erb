@@ -3,7 +3,7 @@
      
 
   <div class="col-md-3 gallery-img-container">
-    <%= image_tag photo.picture.url, class: "gallery-list-img img-responsive" %>
+    <%= image_tag photo.picture.url, class: "gallery-list-img img-responsive", 'data-toggle' => 'modal', 'data-target' => '#myModal' + photo.id.to_s %>
     <div class="caption hidden">
      <%= photo.caption %>
     </div>
@@ -11,11 +11,11 @@
       <%= link_to 'Edit', edit_photo_path(photo), class:"btn btn-xs btn-primary" %>
       <%= link_to 'Delete', photo, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" %>
     <% end %>
-   </div> 
-
-
-
-
+   </div>
+<%= render 'modal_show', obj:photo %>
 <% end %>
+
+
+
 
 

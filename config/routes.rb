@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :photos, except: [:index]
+  resources :photos, except: [:index, :show]
   get 'gallery' => 'photos#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

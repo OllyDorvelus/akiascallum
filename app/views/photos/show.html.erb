@@ -1,19 +1,5 @@
-<p id="notice"><%= notice %></p>
+<%= render 'modal_show', obj: @photo %>
 
-<p>
-  <strong>Caption:</strong>
-  <%= @photo.caption %>
-</p>
-
-<p>
-  <strong>Picture:</strong>
-  <%= image_tag @photo.picture.url if @photo.picture? %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @photo.user.username %>
-</p>
-
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
-<%= link_to 'Back', photos_path %>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal<%=@photo.id%>">
+  Launch demo modal
+</button>
