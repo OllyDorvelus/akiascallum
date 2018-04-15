@@ -28,7 +28,24 @@ $(document).on('turbolinks:load', function() {
     }, 200)
     caption.addClass("hidden")
   })
-
+  
+  
+  $('.index-img-container').mouseenter(function(){
+   // $(".caption").removeClass("hidden")
+    var indexBtn = $(this).find(".index-btn")
+    var img = $(this).find(".index-img")
+        img.animate({
+        opacity: "0.3", height: 450
+    }, 500)
+     indexBtn.removeClass("hidden")
+  }).mouseleave(function(){
+    var indexBtn = $(this).find(".index-btn")
+    var img = $(this).find(".index-img")
+    img.animate({
+        opacity: "1", height: 400
+    }, 500)
+    indexBtn.addClass("hidden")
+  })
   
  // $('.background-image').css("background-image", "url(<%= image_path 'kiadesk.jpg' %>)" )
   

@@ -4,8 +4,8 @@
     <div class="row">
        <span class="badge"><%= link_to "Edit Category Name", edit_category_path(@category) %></span>
     </div>
-     <%= link_to "Delete blog", category_path(@category.name), method: :delete,
-               data: { confirm: 'Are you sure you want to delete this article'},
+     <%= link_to "Delete Category", category_path(@category.name), method: :delete,
+               data: { confirm: 'Are you sure you want to delete this category'},
                class: "badge", style:"color:black" %>
   <% end %>
 </h2>

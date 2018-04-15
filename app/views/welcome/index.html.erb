@@ -1,18 +1,82 @@
-<div class="row" style="padding-top:75px">
-  <div class="col-md-8">
-    
+<div class="container-fluid" style="padding-top:50px">
+<h1 align="center" style="padding-top:5px;padding-bottom:40px">{Insert Quote or something here]</h1>
+<div class="row">
+<div class="col-md-5">
+  <%= image_tag "kiarunback.jpg", class:"img-responsive land-img" %>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-2">
     <div align="center">
       <%= image_tag 'kiatrack.jpg', class:'img-circle frontimg img-responsive animationimg' %>
-    </div>
+    </div> 
     <div class="welcomeabout" align="center">
+      <h4 style="" class="opac">About Kia</h4>
       <p style="padding-top:10px" class="opac">
-        Allow miles wound place the leave had. To sitting subject no improve studied limited. 
-        Ye indulgence unreserved connection alteration appearance my an astonished. Up as seen sent make he they of.
-        Her raising and himself pasture believe females. 
-        Fancy she stuff after aware merit small his. Charmed esteems luckily age out. 
+﻿no purse as fully me or point. Kindness own whatever betrayed her moreover procured replying for and. 
+        Proposal indulged no do do sociable he throwing settling. Covered ten nor comfort offices carried. Age she way earnestly the fulfilled extremely. 
+        Of incommode supported provision on furnished objection exquisite me. 
+        Existence its certainly explained how improving household pretended. 
+        Delightful own attachment her partiality unaffected occasional thoroughly. Adieus it no wonder spirit houses. 
+
+On projection apartments unsatiable so if he entreaties appearance. Rose you wife how set 
+        lady half wish. Hard sing an in true felt. Welcomed stronger if steepest ecstatic an suitable finished of oh. Entered at excited at 
+        forming between so produce. Chicken unknown besides attacks gay compact out you. Continuing no simplicity no favourable on reasonably melancholy estimating. Own hence views two ask right whole ten seems. What near kept met call 
+        old west dine. Our announcing sufficient why pianoforte. 
       </p>
     </div>
+  </div>
+<div class="col-md-5">
+  <%= image_tag "kiarunstart.jpg", class:"img-responsive land-img" %>
+  </div>
+</div>
+</div>
+
+<div class="container-fluid" id="content-section">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 align="center" style="font-weight:900">Latest Articles</h2>
+        <% @latest_blogs.each do |blog| %>
+        <div style="padding-bottom:20px">
+            <h3 align="center" style="font-weight:700"><%= blog.title %></h3>
+            <p class="description"><%= simple_format raw(blog.description.truncate(5000)), class:".blog-body-list" %></p>
+            <div style="padding-top:10px">
+              <small>Last updated <%= time_ago_in_words(blog.updated_at)  %> ago </small></br>
+              <small>Posted <%= time_ago_in_words(blog.created_at)  %> ago </small></br>
+          </div><br>
+            <p class="view-btn"><%= link_to "View Blog", blog_path(blog) %></p>
+        </div>
+        <% end %>
+      
+    </div>
+    <div class="col-md-offset-1 col-md-5">
+        <h2 style="font-weight:800" align="center">Latest Photos</h2>
+      <% @latest_photos.each do |photo| %>
+      <div class="col-md-6 index-gallery" style="padding-bottom:10px"><%= image_tag photo.picture.url %></div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+  
+  <div class="container">
+<div class="row" style="padding-top:75px;padding-bottom:30px">
+  
+  
+  <div class="col-md-4 index-img-container">
+    <%= image_tag '1.jpg', class: 'img-responsive index-img' %>
+    <small class="index-btn hidden"><%= link_to "View Blogs", blogs_path %></small>
+  </div>
+  
+    <div class="col-md-4 index-img-container">
+    <%= image_tag 'kiareddress.jpg', class: 'img-responsive index-img' %>
+    <small class="index-btn hidden"><%= link_to "View Gallery", gallery_path %></small>
+  </div>
+  
+    <div class="col-md-4 index-img-container">
+    <%= image_tag 'kiasign.jpg', class: 'img-responsive index-img' %>
+   <small class="index-btn hidden"><%= link_to "View Categories", categories_path %></small>
+  </div>
+
+    
   </div>
 </div>

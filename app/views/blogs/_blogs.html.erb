@@ -6,7 +6,8 @@
   </div>
   <div class="col-md-4 blog-body-list">
     <p>
-      <%= simple_format truncate(blog.description, length: 600), class:".blog-body-list" %>
+      
+      <%= simple_format raw(blog.description.truncate(1000)), class:".blog-body-list" %>
     </p>
     <div style="float:left">
     <div style="padding-top:10px">
@@ -14,10 +15,10 @@
       <small>Posted <%= time_ago_in_words(blog.created_at)  %> ago </small></br>
     </div>
     <div style="padding-top:10px">
-      <small class="view-blog"><%= link_to "View blog", blog_path(blog) %></small>
-      <small>
+      <small class="view-blog"><%= link_to "View Blog", blog_path(blog) %></small>
+      <small><br><br>
         <% Category.all.each do |category| %>
-          <span class="badge"><%=link_to category.name, category_path(category.name) %></span>
+          <small class="view-blog"><%=link_to category.name, category_path(category.name) %></small>
         <% end %>
       </small></br>
     </div>
@@ -33,9 +34,9 @@
   </div>
   <div class="col-md-4">
     <% if blog.picture? %>
-      <%= image_tag blog.picture.url, class:"img-responsive" %>
+      <%= image_tag blog.picture.url, class:"img-responsive blog-img" %>
     <% else %>
-      <%= image_tag @photos.sample, class:"img-responsive" %>
+      <%= image_tag @photos.sample, class:"img-responsive blog-img" %>
     <% end %>
   </div>
 </div>
