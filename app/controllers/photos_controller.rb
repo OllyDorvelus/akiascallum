@@ -79,6 +79,7 @@ class PhotosController < ApplicationController
          redirect_to root_path
        end
     else 
+      flash[:danger] = "You do not have the proper permissions to access this page"
       redirect_to root_path
     end
   end

@@ -20,7 +20,7 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
     @blog.user = current_user
       if @blog.save
-      #  flash[:success] = "Article was succesfully created"
+        flash[:success] = "Blog was succesfully created"
         redirect_to blog_path(@blog)
       else
         render 'new'
@@ -33,6 +33,7 @@ class BlogsController < ApplicationController
   
   def update
     if @blog.update(blog_params)
+      flash[:success] = "Blog was succesfully updated"
       redirect_to blog_path(@blog)
     else
       render 'edit'
@@ -41,6 +42,7 @@ class BlogsController < ApplicationController
   
   def destroy
     @blog.destroy
+    flash[:danger] = 'Blog was succesfully deleted'
     redirect_to blogs_path
   end
   
@@ -59,7 +61,8 @@ class BlogsController < ApplicationController
        if !current_user.admin?
          redirect_to root_path
        end
-    else 
+    else
+      flash[:danger] = "You do not have the proper permissions to access this page"
       redirect_to root_path
     end
   end

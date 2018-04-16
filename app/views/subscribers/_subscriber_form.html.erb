@@ -1,0 +1,31 @@
+<%= render 'shared/errors', obj: @subscriber %>
+<h1 align='center'>
+ Log In
+</h1>
+
+ <%= form_for(:subscriber, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+   <div class='form-group'>
+     <div class="control-label col-sm-2 col-sm-offset-2">
+        <%= f.label :name %> 
+     </div>
+     <div class="col-sm-4">
+        <%= f.text_field :name, class: "form-control", placeholder: "Enter name", autoFocus: true %>
+     </div>
+   </div>
+   <div class='form-group'>
+     <div class="control-label col-sm-2 col-sm-offset-2">
+        <%= f.label :email %>
+     </div>
+     <div class="col-sm-4">
+        <%= f.email_field :email,  class: "form-control", autocomplete: "off", placeholder:"Enter email" %>
+     </div>
+   </div>
+    <div class="form-group">
+         <div class="col-sm-12" align="center">
+      <%= f.submit "Subscribe", class: "btn btn-primary btn-lg" %>
+      </div>
+         </div>
+    <% end %>
+    <div class="col-sm-12" align="center">
+      [ <%= link_to "Cancel and return to back to home", home_path %> ]
+</div>

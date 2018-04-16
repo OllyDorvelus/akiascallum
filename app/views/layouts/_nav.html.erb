@@ -1,5 +1,5 @@
 <ul class="navigation" align="center">
-  <%= link_to "Home", root_path, class: "navli" %>
+  <%= link_to "Home", home_path, class: "navli" %>
   <%= link_to "Blogs", blogs_path, class:"navli" %>
   <%= link_to "Gallery", gallery_path, class:"navli" %>
   <li class="dropdown navli">
@@ -17,7 +17,7 @@
       <li><a href="#">Separated link</a></li> -->
     </ul>
   </li>
-  <li class="navli">About</li>
+<!--   <li class="navli">About</li> -->
   <% if logged_in? && current_user.admin? %> 
     <%= link_to "Logout", logout_path, method: :delete, class: "navli" %>
   <% end if %>

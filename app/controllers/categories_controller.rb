@@ -50,7 +50,8 @@ class CategoriesController < ApplicationController
        if !current_user.admin?
          redirect_to root_path
        end
-    else 
+    else
+      flash[:danger] = "You do not have the proper permissions to access this page"
       redirect_to root_path
     end
   end

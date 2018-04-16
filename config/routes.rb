@@ -8,9 +8,12 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-    root 'welcome#index'
+    root 'welcome#landing'
+    get 'home' => 'welcome#index'
     get 'blogs' => 'blogs#index'
     get  'blogs/new' => 'blogs#new'
+    get 'subscribe', to: 'subscribers#new'
+    post 'subscribe', to: 'subscribers#create'
     #post 'blogs/new' => 'blogs#create'
     
     resources :blogs, only: [:create, :show, :edit, :update, :destroy]

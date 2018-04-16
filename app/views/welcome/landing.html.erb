@@ -1,0 +1,38 @@
+<div id="landing-container" class="container-fluid">
+<!--   <h1 align="center" style="font-weight:800">
+    [Insert Something Here]
+  </h1> -->
+  <div class="col-md-5 col-md-offset-4">
+      <h2 style="margin-top:5%;margin-left:40px;font-weight:800">[insert Lame Caption/Quote Here ... ]</h2>
+  </div>
+
+  <div class="row">
+    <div class="enter col-md-3 col-md-offset-5">
+    <h1><%= link_to "Enter", home_path %></h1>
+    </div>
+  </div>
+  
+  <div class="view col-md-6 col-md-offset-4">
+    <h3><%= link_to "View Blogs", blogs_path %></h3>
+    <h3><%= link_to "View Photos", gallery_path %></h3>
+    <h3><%= link_to "View Categories", categories_path %></h3>
+  </div>
+  
+  <div class="col-md-4 col-md-offset-5">
+    <%=link_to(image_tag('fblogo'), "https://www.facebook.com/akia.callum") %>
+    <%=link_to(image_tag('instalogo'), "https://www.instagram.com/akiascallum/") %>
+    <strong><h4 style="font-size:33px;font-weight:900;display:inline;color:black"></strong>
+      @akiascallum
+    </h4>
+  </div>
+  
+</div>
+
+
+
+
+
+<script>
+  $(".navigation").hide();
+  $('.page-container').removeClass("container-fluid");
+</script>
