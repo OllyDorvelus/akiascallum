@@ -33,6 +33,8 @@ class BlogsController < ApplicationController
   
   def update
     if @blog.update(blog_params)
+      @subscriber = Subscriber.first
+       SubscribeMailer.sample_email(@subscriber).deliver
       flash[:success] = "Blog was succesfully updated"
       redirect_to blog_path(@blog)
     else

@@ -21,6 +21,8 @@ gem 'rails_admin', '~> 1.3'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'ckeditor', '4.1.3'
+gem 'figaro'
+gem 'aws-sdk'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
