@@ -1,5 +1,5 @@
 class SubscribeMailer < ApplicationMailer
-  default from: "blackace5445@gmail.com"
+  default from: "akia@akiascallum.com"
   
   
   def sample_email(subscriber)
