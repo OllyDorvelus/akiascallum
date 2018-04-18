@@ -38,7 +38,7 @@
   //z-index: 1;
 
   display: block;
-  background-image: asset-url(<% if @blog.picture? %> 
+  background-image: url(<% if @blog.picture? %> 
                         <%= image_path @blog.picture.url %>
                         <% else %>
                         <%=image_path @photos.sample %>
