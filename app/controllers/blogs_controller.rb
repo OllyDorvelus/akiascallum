@@ -21,6 +21,9 @@ class BlogsController < ApplicationController
     @blog.user = current_user
       if @blog.save
         flash[:success] = "Blog was succesfully created"
+        Subscriber.all.each do |subscriber|
+          SubscribeMailer.blog_email(subscriber, @blog).deliver
+        end
         redirect_to blog_path(@blog)
       else
         render 'new'
@@ -34,7 +37,6 @@ class BlogsController < ApplicationController
   def update
     if @blog.update(blog_params)
       @subscriber = Subscriber.first
-      SubscribeMailer.sample_email(@subscriber).deliver
       flash[:success] = "Blog was succesfully updated"
       redirect_to blog_path(@blog)
     else
@@ -61,11 +63,11 @@ class BlogsController < ApplicationController
   def is_admin
     if logged_in?
        if !current_user.admin?
-         redirect_to root_path
+         redirect_to home_path
        end
     else
       flash[:danger] = "You do not have the proper permissions to access this page"
-      redirect_to root_path
+      redirect_to home_path
     end
   end
 

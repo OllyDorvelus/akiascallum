@@ -48,11 +48,11 @@ class CategoriesController < ApplicationController
   def is_admin
     if logged_in?
        if !current_user.admin?
-         redirect_to root_path
+         redirect_to home_path
        end
     else
       flash[:danger] = "You do not have the proper permissions to access this page"
-      redirect_to root_path
+      redirect_to home_path
     end
   end
   

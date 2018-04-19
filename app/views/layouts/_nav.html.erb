@@ -17,7 +17,6 @@
       <li><a href="#">Separated link</a></li> -->
     </ul>
   </li>
-<!--   <li class="navli">About</li> -->
   <% if logged_in? && current_user.admin? %> 
     <%= link_to "Logout", logout_path, method: :delete, class: "navli" %>
   <% end if %>

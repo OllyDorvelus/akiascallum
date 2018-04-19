@@ -14,6 +14,7 @@
       <%= raw(@blog.description) %>
     </p>
     <div align="center">
+      <h4 style="padding-top:30px" class="subscribe-btn"><%= link_to "Subscribe", subscribe_path %></h4></br></br>
       <small>Last updated <%= time_ago_in_words(@blog.updated_at)  %> ago </small></br>
       <small>Posted <%= time_ago_in_words(@blog.created_at)  %> ago </small></br>
     </div>
@@ -54,6 +55,7 @@
   filter: blur(0.5px);
   border-radius: 100px;
 }
+  
 </style>
 
 <script>

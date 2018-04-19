@@ -90,15 +90,17 @@ body {
 }
 
 .btn-primary, .btn-primary:active, .btn-primary:visited {
-    background-color: $primary-cl !important;
+    background-color: $primary-bg !important;
     /*background: rgba(0, 0, 0, 0.5) !important;*/
     border-radius:10px;
-    color:black !important;
+    color: $primary-cl !important;
+    font-weight: 800;
+    border-color: $primary-cl;
 }
 
 .btn-primary:hover {
-  color:$primary-cl !important;
-  background-color:$primary-bg !important;
+  color:$primary-bg !important;
+  background-color:$primary-cl !important;
 }
 
 .login-field {
@@ -150,7 +152,6 @@ hr {
 }
 
 p img {
-    height:300px !important;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -250,11 +251,24 @@ p img {
   border: 0.5px solid $primary-cl;
   padding: 10px;
   text-decoration:none;
+  background: #000;
 }
 
 .view-blog a:hover {
     background-color: $primary-cl;
     color: #000;
+  }
+
+.subscribe-btn a {
+  color: $primary-cl;
+  border: 0.5px solid $primary-cl;
+  padding: 10px;
+  text-decoration:none;
+  background: #000;
+}
+
+.subscribe-btn a:hover {
+    opacity: 0.8;
   }
 
 .bg-primary-cl {

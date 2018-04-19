@@ -8,7 +8,7 @@ class SubscribersController < ApplicationController
     @subscriber = Subscriber.new(subscriber_params)
       if @subscriber.save
         flash[:success] = "Thank you #{@subscriber.name} for subscribing"
-        SubscribeMailer.sample_email(@subscriber).deliver
+        SubscribeMailer.welcome_email(@subscriber).deliver
         redirect_to home_path
       else
         render 'new'
