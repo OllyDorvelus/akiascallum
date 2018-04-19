@@ -38,6 +38,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+config.action_mailer.default_url_options = { :host => 'ruby-on-rails-ollydorvelus917598.codeanyapp.com' }
 config.action_mailer.delivery_method = :smtp
 # SMTP settings for gmail
 config.action_mailer.smtp_settings = {
@@ -49,4 +50,5 @@ config.action_mailer.smtp_settings = {
 :enable_starttls_auto => true
 }
 config.action_mailer.perform_deliveries = true
+
 end
