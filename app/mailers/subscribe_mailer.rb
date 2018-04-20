@@ -1,5 +1,5 @@
 class SubscribeMailer < ApplicationMailer
-  default from: "akia@akiascallum.com"
+  default from: "Akia Callum"
   
   def welcome_email(subscriber)
     @subscriber = subscriber
