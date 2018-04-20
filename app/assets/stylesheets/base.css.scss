@@ -421,6 +421,14 @@ p img {
   margin-left: 0px;
 }
 
+.pagination {
+  a {
+    color:$primary-cl !important;
+    background-color: $primary-bg !important;
+    border-color: $primary-cl !important;
+  }
+}
+
 //MEDIA QUERIES
 
 @media only screen and (max-width: 1150px) {

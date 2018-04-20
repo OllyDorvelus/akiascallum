@@ -11,4 +11,7 @@
 </h1>
 <hr>
 
-<%= render 'blogs/blogs', obj:@category_blogs %>
+<%= render 'blogs/blogs', obj:@categories %>
+<div class="text-center">
+  <%= will_paginate %>
+</div>

@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   before_action :is_admin, only: [:edit, :new, :update, :destroy]
   
   def index
-    @blogs = Blog.paginate(page: params[:page], per_page: 10)
+    @blogs = Blog.paginate(page: params[:page], per_page: 5)
     @photos = ['kiadesk.jpg', 'kiacongress.jpg', "kiabag.jpg", "kiarunback.jpg"]
   end
   

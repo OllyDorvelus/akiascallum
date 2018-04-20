@@ -16,12 +16,12 @@ class CategoriesController < ApplicationController
   end
   
   def show
-    @category_blogs = @category.blogs.paginate(page: params[:page], per_page: 5)
+    @categories = @category.blogs.paginate(page: params[:page], per_page: 5)
     @photos = ['kiadesk.jpg', 'kiacongress.jpg', "kiabag.jpg", "kiarunback.jpg"]
   end
   
   def index
-    @categories = Category.paginate(page: params[:page], per_page: 5)
+    @categories = Category.paginate(page: params[:page], per_page: 10)
   end
   
   def edit
